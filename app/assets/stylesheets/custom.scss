@@ -2,14 +2,6 @@
 @import "bootstrap";
 
 /* mixins, variables, etc. */
-$gray-medium-light: #eaeaea;
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
 
@@ -115,6 +107,24 @@ footer {
   }
 }
 
+@media (max-width: 800px) {
+  footer {
+    small {
+      display: block;
+      float: none;
+      margin-bottom: 1em;
+    }
+    ul {
+      float: none;
+      padding: 0;
+      li {
+        float: none;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
 /* miscellaneous */
 
 .debug_dump {
@@ -125,6 +135,7 @@ footer {
 }
 
 /* sidebar */
+
 aside {
   section.user_info {
     margin-top: 20px;
@@ -150,24 +161,26 @@ aside {
     }
   }
 }
+
 .gravatar {
   float: left;
   margin-right: 10px;
 }
+
 .gravatar_edit {
   margin-top: 15px;
 }
 
 /* forms */
+
 input,
-textarea,
-select,
-.uneditable-input {
+textarea {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
 }
+
 input {
   height: auto !important;
 }
@@ -179,9 +192,16 @@ input {
     margin: 0 0 30px 0;
   }
 }
+
 .field_with_errors {
   @extend .has-error;
   .form-control {
     color: $state-danger-text;
   }
+}
+
+/* Dropdown menu */
+
+.dropdown-menu.active {
+  display: block;
 }
